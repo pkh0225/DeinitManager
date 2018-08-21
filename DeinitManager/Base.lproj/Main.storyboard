@@ -101,9 +101,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubView 가 Closure  안에 self가 weak 처리 되지 않아   controllview가 deinit이 호출되지 않는 문제" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-cP-xpx">
-                                <rect key="frame" x="37" y="154" width="300" height="179"/>
+                                <rect key="frame" x="37" y="203" width="300" height="81.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.094820205479452052" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="5iH-Cq-aQr"/>
                                     <constraint firstAttribute="width" constant="300" id="Bqg-UJ-Dzg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -175,6 +175,7 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell Closure 안에 tableview가 weak 처리 되지 않아   cell이 deinit이 호출되지 않는 문제" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE7-yE-rtC">
                                 <rect key="frame" x="37" y="203" width="300" height="81.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.089999999999999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="blL-KO-dle"/>
                                 </constraints>
@@ -231,6 +232,7 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell Closure 안에 cell이 weak 처리 되지 않아   cell이 deinit이 호출되지 않는 문제" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-Vd-hXo">
                                 <rect key="frame" x="37" y="203" width="300" height="81.5"/>
+                                <color key="backgroundColor" red="0.05346679688" green="0.0" blue="0.0" alpha="0.089999999999999997" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Q7v-hM-ino"/>
                                 </constraints>
