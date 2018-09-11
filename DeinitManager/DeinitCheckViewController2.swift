@@ -12,9 +12,13 @@ class DeinitCheckViewController2: BaseViewController {
 
     @IBOutlet weak var testView: DeinitCheckView!
     
+    var testView2 = DeinitCheckView()
+    var testView3 = DeinitCheckView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // 문제 코드
         testView.testClosure = {
             print(self.testView)
@@ -30,6 +34,14 @@ class DeinitCheckViewController2: BaseViewController {
 //        testView.testClosure = { [weak self] in
 //            guard let `self` = self else { return }
 //            print(self.testView)
+//
+//            self.testView2.testClosure = {
+//                print(self.testView2)
+//
+//                self.testView3.testClosure = {
+//                    print(self.testView3)
+//                }
+//            }
 //        }
     }
 
