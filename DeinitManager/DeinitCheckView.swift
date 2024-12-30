@@ -9,7 +9,7 @@
 import UIKit
 
 class DeinitCheckView: BaseView {
-    var testClosure: VoidClosure?
+    var testClosure: (() -> Void)??
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -8,21 +8,17 @@
 
 import UIKit
 
-public class BaseCollectionViewCell: UICollectionViewCell  {
-    
-    deinit {
-//        print("\t<<<<< \(self.className) deinit >>>>>")
-        DeinitManager.shared.deInitClass(className: self.className)
-    }
-    
+public class BaseCollectionViewCell: UICollectionViewCell, DeinitChecker  {
+    public var deinitNotifier: DeinitNotifier?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        DeinitManager.shared.addClass(className: self.className)
+        setDeinitNotifier()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        DeinitManager.shared.addClass(className: self.className)
+        setDeinitNotifier()
     }
     
 }

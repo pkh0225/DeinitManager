@@ -10,7 +10,7 @@ import UIKit
 
 class DeinitCheckTableViewCell: BaseTableViewCell {
     
-    var testClosure: VoidClosure?
+    var testClosure: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,8 +15,9 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DeinitManager.shared.initRun(true, navigation: self.navigationController)
-        self.tableView.register(UITableViewCell.self)
+        DeinitManager.shared.isRun = true
+        self.navigationController?.title = "DeinitChecker"
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,19 +30,19 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(UITableViewCell.self, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
         cell.textLabel?.numberOfLines = 0
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "self weak 처리가 되지 않아서 발생하는 문제"
+            cell.textLabel?.text = "1. self weak 처리가 되지 않아서 발생하는 문제"
         case 1:
-            cell.textLabel?.text = "SubView 에 self가 weak 처리가 되지 않아서 발생하는 문제"
+            cell.textLabel?.text = "2. SubView 에 self가 weak 처리가 되지 않아서 발생하는 문제"
         case 2:
-            cell.textLabel?.text = "Cell Closure 안에 tableview가 weak 처리 되지 않아 cell이 deinit이 호출되지 않는 문제"
+            cell.textLabel?.text = "3. Cell Closure 안에 tableview가 weak 처리 되지 않아 cell이 deinit이 호출되지 않는 문제"
         case 3:
-            cell.textLabel?.text = "Cell Closure 안에 cell이 weak 처리 되지 않아 cell이 deinit이 호출되지 않는 문제"
+            cell.textLabel?.text = "4. Cell Closure 안에 cell이 weak 처리 되지 않아 cell이 deinit이 호출되지 않는 문제"
         case 4:
-            cell.textLabel?.text = " 정상"
+            cell.textLabel?.text = "5. 정상"
             
         default:
             break
@@ -50,21 +51,27 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         switch indexPath.row {
         case 0:
-            DeinitManager.shared.pushViewControllerFromStoryBoard(DeinitCheckViewController.self)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DeinitCheckViewController1")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            DeinitManager.shared.pushViewControllerFromStoryBoard(DeinitCheckViewController2.self)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DeinitCheckViewController2")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 2:
-            DeinitManager.shared.pushViewControllerFromStoryBoard(DeinitCheckViewController3.self)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DeinitCheckViewController3")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 3:
-            DeinitManager.shared.pushViewControllerFromStoryBoard(DeinitCheckViewController4.self)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DeinitCheckViewController4")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 4:
-            DeinitManager.shared.pushViewControllerFromStoryBoard(DeinitCheckViewController5.self)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DeinitCheckViewController5")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
             
         default:

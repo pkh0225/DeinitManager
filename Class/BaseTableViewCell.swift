@@ -8,16 +8,17 @@
 
 import UIKit
 
-public class BaseTableViewCell: UITableViewCell {
+public class BaseTableViewCell: UITableViewCell, DeinitChecker {
+    public var deinitNotifier: DeinitNotifier?
     
-    deinit {
-//        print("\t<<<<< \(self.className) deinit >>>>>")
-        DeinitManager.shared.deInitClass(className: self.className)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setDeinitNotifier()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        DeinitManager.shared.addClass(className: self.className)
+        setDeinitNotifier()
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class DeinitCheckViewController5: BaseViewController {
 
-    var testClosure: VoidClosure?
+    var testClosure: (() -> Void)??
     
     override func viewDidLoad() {
         super.viewDidLoad()
