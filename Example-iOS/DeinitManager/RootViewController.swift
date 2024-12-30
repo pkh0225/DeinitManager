@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DeinitChecker
 
 class RootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 

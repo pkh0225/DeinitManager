@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205836772D2265CE0069323D /* DeinitChecker in Frameworks */ = {isa = PBXBuildFile; productRef = 205836762D2265CE0069323D /* DeinitChecker */; };
 		430F1FBC2127AEF00014BDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FBB2127AEF00014BDBD /* AppDelegate.swift */; };
 		430F1FBE2127AEF00014BDBD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FBD2127AEF00014BDBD /* RootViewController.swift */; };
 		430F1FC12127AEF00014BDBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430F1FBF2127AEF00014BDBD /* Main.storyboard */; };
 		430F1FC32127AEF20014BDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430F1FC22127AEF20014BDBD /* Assets.xcassets */; };
 		430F1FC62127AEF20014BDBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430F1FC42127AEF20014BDBD /* LaunchScreen.storyboard */; };
 		430F1FCE2127AF1B0014BDBD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 430F1FCD2127AF1B0014BDBD /* README.md */; };
-		430F1FD42127B0C60014BDBD /* DeinitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FD32127B0C60014BDBD /* DeinitManager.swift */; };
 		430F1FDA2127C9A20014BDBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FD52127C9A10014BDBD /* BaseView.swift */; };
 		430F1FDB2127C9A20014BDBD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FD62127C9A10014BDBD /* BaseCollectionViewCell.swift */; };
 		430F1FDC2127C9A20014BDBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1FD72127C9A10014BDBD /* BaseViewController.swift */; };
@@ -29,15 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		430F1FB82127AEF00014BDBD /* DeinitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeinitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		430F1FB82127AEF00014BDBD /* DeinitManagerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeinitManagerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		430F1FBB2127AEF00014BDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		430F1FBD2127AEF00014BDBD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		430F1FC02127AEF00014BDBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		430F1FC22127AEF20014BDBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		430F1FC52127AEF20014BDBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		430F1FC72127AEF20014BDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		430F1FCD2127AF1B0014BDBD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		430F1FD32127B0C60014BDBD /* DeinitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeinitManager.swift; sourceTree = "<group>"; };
+		430F1FCD2127AF1B0014BDBD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		430F1FD52127C9A10014BDBD /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		430F1FD62127C9A10014BDBD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		430F1FD72127C9A10014BDBD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -57,18 +56,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205836772D2265CE0069323D /* DeinitChecker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205836752D2265CE0069323D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		430F1FAF2127AEF00014BDBD = {
 			isa = PBXGroup;
 			children = (
 				430F1FCD2127AF1B0014BDBD /* README.md */,
 				430F1FD12127B0440014BDBD /* Class */,
 				430F1FBA2127AEF00014BDBD /* DeinitManager */,
+				205836752D2265CE0069323D /* Frameworks */,
 				430F1FB92127AEF00014BDBD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +84,7 @@
 		430F1FB92127AEF00014BDBD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				430F1FB82127AEF00014BDBD /* DeinitManager.app */,
+				430F1FB82127AEF00014BDBD /* DeinitManagerTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +117,6 @@
 				430F1FD92127C9A10014BDBD /* BaseTableViewCell.swift */,
 				430F1FD52127C9A10014BDBD /* BaseView.swift */,
 				430F1FD72127C9A10014BDBD /* BaseViewController.swift */,
-				430F1FD32127B0C60014BDBD /* DeinitManager.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -117,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		430F1FB72127AEF00014BDBD /* DeinitManager */ = {
+		430F1FB72127AEF00014BDBD /* DeinitManagerTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 430F1FCA2127AEF20014BDBD /* Build configuration list for PBXNativeTarget "DeinitManager" */;
+			buildConfigurationList = 430F1FCA2127AEF20014BDBD /* Build configuration list for PBXNativeTarget "DeinitManagerTest" */;
 			buildPhases = (
 				430F1FB42127AEF00014BDBD /* Sources */,
 				430F1FB52127AEF00014BDBD /* Frameworks */,
@@ -129,9 +136,9 @@
 			);
 			dependencies = (
 			);
-			name = DeinitManager;
+			name = DeinitManagerTest;
 			productName = DeinitManager;
-			productReference = 430F1FB82127AEF00014BDBD /* DeinitManager.app */;
+			productReference = 430F1FB82127AEF00014BDBD /* DeinitManagerTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +156,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 430F1FB32127AEF00014BDBD /* Build configuration list for PBXProject "DeinitManager" */;
+			buildConfigurationList = 430F1FB32127AEF00014BDBD /* Build configuration list for PBXProject "DeinitManagerTest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -158,11 +165,14 @@
 				Base,
 			);
 			mainGroup = 430F1FAF2127AEF00014BDBD;
+			packageReferences = (
+				2020FC5E2D226473002B8A8B /* XCLocalSwiftPackageReference "../../DeinitChecker" */,
+			);
 			productRefGroup = 430F1FB92127AEF00014BDBD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				430F1FB72127AEF00014BDBD /* DeinitManager */,
+				430F1FB72127AEF00014BDBD /* DeinitManagerTest */,
 			);
 		};
 /* End PBXProject section */
@@ -193,7 +203,6 @@
 				4394B0972127E5A3005D4FFE /* DeinitCheckTableViewCell.swift in Sources */,
 				430F1FBE2127AEF00014BDBD /* RootViewController.swift in Sources */,
 				430F1FDC2127C9A20014BDBD /* BaseViewController.swift in Sources */,
-				430F1FD42127B0C60014BDBD /* DeinitManager.swift in Sources */,
 				4394B0932127E150005D4FFE /* DeinitCheckView.swift in Sources */,
 				430F1FDE2127C9A20014BDBD /* BaseTableViewCell.swift in Sources */,
 				4394B0952127E52C005D4FFE /* DeinitCheckViewController3.swift in Sources */,
@@ -347,11 +356,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LW3F5LSN8X;
 				INFOPLIST_FILE = DeinitManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.beta.DeinitManager;
+				PRODUCT_BUNDLE_IDENTIFIER = test.beta.DeinitManagerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,11 +375,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LW3F5LSN8X;
 				INFOPLIST_FILE = DeinitManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.beta.DeinitManager;
+				PRODUCT_BUNDLE_IDENTIFIER = test.beta.DeinitManagerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,7 +390,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		430F1FB32127AEF00014BDBD /* Build configuration list for PBXProject "DeinitManager" */ = {
+		430F1FB32127AEF00014BDBD /* Build configuration list for PBXProject "DeinitManagerTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				430F1FC82127AEF20014BDBD /* Debug */,
@@ -388,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		430F1FCA2127AEF20014BDBD /* Build configuration list for PBXNativeTarget "DeinitManager" */ = {
+		430F1FCA2127AEF20014BDBD /* Build configuration list for PBXNativeTarget "DeinitManagerTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				430F1FCB2127AEF20014BDBD /* Debug */,
@@ -398,6 +409,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2020FC5E2D226473002B8A8B /* XCLocalSwiftPackageReference "../../DeinitChecker" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../DeinitChecker;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		205836762D2265CE0069323D /* DeinitChecker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2020FC5E2D226473002B8A8B /* XCLocalSwiftPackageReference "../../DeinitChecker" */;
+			productName = DeinitChecker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 430F1FB02127AEF00014BDBD /* Project object */;
 }

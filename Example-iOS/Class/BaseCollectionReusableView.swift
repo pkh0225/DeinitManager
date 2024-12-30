@@ -1,5 +1,5 @@
 //
-//  BaseTableViewCell.swift
+//  BaseCollectionReusableView.swift
 //  ssg
 //
 //  Created by pkh on 2017. 12. 20..
@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import DeinitChecker
 
-public class BaseTableViewCell: UITableViewCell, DeinitChecker {
+public class BaseCollectionReusableView: UICollectionReusableView, DeinitChecker {
     public var deinitNotifier: DeinitNotifier?
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setDeinitNotifier()
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setDeinitNotifier()
     }
-    
 }

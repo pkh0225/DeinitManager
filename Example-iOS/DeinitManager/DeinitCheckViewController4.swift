@@ -39,18 +39,17 @@ class DeinitCheckViewController4: BaseViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeinitCheckTableViewCell", for: indexPath) as! DeinitCheckTableViewCell
         cell.textLabel?.text = "row: \(indexPath.row)"
-        // 문제 코드
-//        cell.testClosure = {
-//            print(cell)
-//        }
-        
-        // 정상 문제 코드 1
-        cell.testClosure = { [weak cell] in
-            guard let cell = cell else { return }
+         // 문제 코드
+        cell.testClosure = {
             print(cell)
         }
         
-       
+        // 정상 문제 코드 1
+//        cell.testClosure = { [weak cell] in
+//            guard let cell = cell else { return }
+//            print(cell)
+//        }
+
         return cell
     }
 }

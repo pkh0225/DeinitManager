@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DeinitChecker
 
 public class BaseViewController: UIViewController, DeinitChecker {
     public var deinitNotifier: DeinitNotifier?

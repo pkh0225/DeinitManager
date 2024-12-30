@@ -1,71 +1,11 @@
-    //
-//  DeinitManager.swift
-//  ssg
 //
-//  Created by pkh on 2018. 7. 11..
-//  Copyright © 2018년 emart. All rights reserved.
+//  DeinitManager.swift
+//  DeinitManager
+//
+//  Created by 박길호on 12/30/24.
 //
 
 import UIKit
-
-public protocol DeinitChecker: AnyObject {
-    var deinitNotifier: DeinitNotifier? { get set }
-}
-
-extension DeinitChecker {
-    public func setDeinitNotifier() {
-        guard DeinitManager.shared.isRun else {
-            deinitNotifier = nil
-            return
-        }
-        guard deinitNotifier == nil else { return }
-
-        let name = String(describing: type(of: self))
-        DeinitManager.shared.initObject(name)
-        self.deinitNotifier = DeinitNotifier() {
-            DeinitManager.shared.deinitObject(name)
-        }
-    }
-}
-
-public final class DeinitNotifier {
-    private let onDeinitNotifier: () -> Void
-
-    public init(onDeinitNotifier: @escaping () -> Void) {
-        self.onDeinitNotifier = onDeinitNotifier
-    }
-
-    deinit {
-        onDeinitNotifier()
-    }
-}
-
-extension DeinitChecker where Self: UIViewController {
-    public func setDeinitNotifier() {
-        guard DeinitManager.shared.isRun else {
-            deinitNotifier = nil
-            return
-        }
-        guard deinitNotifier == nil else { return }
-        let navigationController = self.navigationController
-        let name = String(describing: type(of: self))
-
-        if navigationController?.viewControllers.last == self {
-            let point = unsafeBitCast(self, to: Int.self)
-            DeinitManager.shared.pushViewController(name, address: point)
-            self.deinitNotifier = DeinitNotifier() {
-                DeinitManager.shared.popViewController(name, address: point)
-            }
-        }
-        else {
-            DeinitManager.shared.initObject(name)
-            self.deinitNotifier = DeinitNotifier() {
-                DeinitManager.shared.deinitObject(name)
-            }
-        }
-    }
-}
-
 
 public final class DeinitManager {
     final class VCInfoClass: Equatable {
@@ -94,7 +34,7 @@ public final class DeinitManager {
         }
     }
 
-    static let shared: DeinitManager = { return DeinitManager() }()
+    static public let shared: DeinitManager = { return DeinitManager() }()
     private init() {}
 
     public var isRun: Bool = false {
@@ -114,7 +54,6 @@ public final class DeinitManager {
     private var vcInfos = [VCInfoClass]()
     private(set) var isMemoryRepory: Bool = false
     private var memoryLabel: UILabel?
-
 
     private func removeAll() {
         self.vcInfos.removeAll()
@@ -288,7 +227,7 @@ extension DeinitManager {
 
             NSLayoutConstraint.activate([
                 wrapperView.centerXAnchor.constraint(equalTo: keyWindow.centerXAnchor),
-                wrapperView.centerYAnchor.constraint(equalTo: keyWindow.centerYAnchor, constant: keyWindow.safeAreaInsets.top),
+                wrapperView.centerYAnchor.constraint(equalTo: keyWindow.centerYAnchor),
 
                 // StackView의 마진 설정 (컨테이너와의 거리)
                 stackView.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: 20),
@@ -310,6 +249,8 @@ extension DeinitManager {
             view.clipsToBounds = true
             view.translatesAutoresizingMaskIntoConstraints = false
             view.tag = 987654321
+            view.layer.borderWidth = 1
+            view.layer.borderColor = UIColor.black.cgColor
             keyWindow.addSubview(view)
 
             let textView: UITextView = UITextView()
@@ -322,7 +263,7 @@ extension DeinitManager {
 
             let btn: UIButton = UIButton()
             btn.translatesAutoresizingMaskIntoConstraints = false
-            btn.backgroundColor = .green
+            btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             btn.setTitle("닫기", for: .normal)
             btn.setTitleColor(.black, for: .normal)
             btn.addTarget(self, action: #selector(self.onClose(btn:)), for: .touchUpInside)
@@ -330,7 +271,7 @@ extension DeinitManager {
 
             let btn2: UIButton = UIButton()
             btn2.translatesAutoresizingMaskIntoConstraints = false
-            btn2.backgroundColor = .blue
+            btn2.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             btn2.setTitle("초기화", for: .normal)
             btn2.setTitleColor(.black, for: .normal)
             btn2.addTarget(self, action: #selector(self.onReset(btn:)), for: .touchUpInside)
