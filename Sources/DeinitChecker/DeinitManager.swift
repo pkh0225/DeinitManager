@@ -242,13 +242,15 @@ extension DeinitManager {
         }
     }
 
+    private static let resultViewTag: Int = 987654321
+
     private func makeView(value: String) {
         DispatchQueue.main.async {
             guard let keyWindow = self.keyWindow() else { return }
             let view: UIView = UIView()
             view.clipsToBounds = true
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.tag = 987654321
+            view.tag = Self.resultViewTag
             view.layer.borderWidth = 1
             view.layer.borderColor = UIColor.black.cgColor
             keyWindow.addSubview(view)
@@ -312,12 +314,12 @@ extension DeinitManager {
 
     @objc func onClose(btn: UIButton) {
         guard let keyWindow = self.keyWindow() else { return }
-        keyWindow.viewWithTag(987654321)?.removeFromSuperview()
+        keyWindow.viewWithTag(Self.resultViewTag)?.removeFromSuperview()
     }
 
     @objc func onReset(btn: UIButton) {
         guard let keyWindow = self.keyWindow() else { return }
-        keyWindow.viewWithTag(987654321)?.removeFromSuperview()
+        keyWindow.viewWithTag(Self.resultViewTag)?.removeFromSuperview()
         self.vcInfos.removeAll()
     }
 }
