@@ -347,22 +347,7 @@ extension DeinitManager {
         btn.setTitleColor(.black, for: .normal)
         btn.addTarget(self, action: #selector(self.onClose(btn:)), for: .touchUpInside)
 
-        let btn2: UIButton = UIButton()
-        btn2.translatesAutoresizingMaskIntoConstraints = false
-        btn2.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        btn2.setTitle("초기화", for: .normal)
-        btn2.setTitleColor(.black, for: .normal)
-        btn2.addTarget(self, action: #selector(self.onReset(btn:)), for: .touchUpInside)
-
-        let stackViewHorizontal = UIStackView(arrangedSubviews: [btn, btn2])
-        stackViewHorizontal.axis = .horizontal
-        stackViewHorizontal.spacing = 0
-        stackViewHorizontal.translatesAutoresizingMaskIntoConstraints = false
-        stackViewHorizontal.alignment = .fill
-        stackViewHorizontal.distribution = .fillEqually
-        view.addSubview(stackViewHorizontal)
-
-        let stackViewVertical = UIStackView(arrangedSubviews: [textView, stackViewHorizontal])
+        let stackViewVertical = UIStackView(arrangedSubviews: [textView, btn])
         stackViewVertical.axis = .vertical
         stackViewVertical.spacing = 0
         stackViewVertical.translatesAutoresizingMaskIntoConstraints = false
@@ -377,7 +362,7 @@ extension DeinitManager {
             view.widthAnchor.constraint(equalTo: keyWindow.widthAnchor, multiplier: 0.8),
             view.heightAnchor.constraint(equalTo: keyWindow.heightAnchor, multiplier: 0.8),
 
-            stackViewHorizontal.heightAnchor.constraint(equalToConstant: 50),
+            btn.heightAnchor.constraint(equalToConstant: 50),
 
             stackViewVertical.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             stackViewVertical.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -387,10 +372,6 @@ extension DeinitManager {
     }
 
     @objc func onClose(btn: UIButton) {
-        removeResultView()
-    }
-
-    @objc func onReset(btn: UIButton) {
         self.vcInfos.removeAll()
         removeResultView()
     }
